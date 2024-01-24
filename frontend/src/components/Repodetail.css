@@ -1,0 +1,46 @@
+.detaildiv{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #D8D2DE;
+}
+
+.detailchild{
+    background-color: white;
+    padding: 2rem;
+    border-radius: 0.25rem;
+    width: 100%;
+    max-width: 28rem;
+    --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.detailchild h2{
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;--tw-text-opacity: 1;
+    color: rgb(59 130 246 / var(--tw-text-opacity));
+}
+
+.repodet{
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.repodet span{
+    font-weight: bold;
+}
+
+.languages{
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+}
+
+.lanlist{
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+}

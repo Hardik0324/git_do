@@ -1,0 +1,88 @@
+.maindiv {
+    height: 100vh;
+    width: 100vw;
+    background-color: #D8D2DE;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+}
+
+
+.chilDiv1 {
+    height: 20%;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-color: inherit;
+    border-radius: 0.25rem;
+    align-items: center;
+    position: relative;
+    --tw-bg-opacity: 1;
+    background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+}
+
+.folbtn{
+    position: absolute;
+    border-color: inherit;
+    border-radius: 0.25rem;
+    align-items: center;
+    background-color: blue;
+    color: white;
+    padding: 5px;
+    top: 10px;
+    right: 10px;
+}
+
+.chilDiv1 img {
+    height: 70%;
+    border-radius: 50%;
+    padding-top: 2px;
+}
+
+
+.chilDiv2 {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 5%;
+    padding-top: 20px;
+    padding-left: 10%;
+    padding-right: 10%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.repo {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    align-items: center;
+    --tw-bg-opacity: 1;
+    background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+    padding: 5px;
+    border-width: 2px;
+    border-color: rgb(187, 185, 185);
+    border-radius: 0.5rem;
+}
+
+.repoavatar {
+    height: 90%;
+    width: 20%;
+    border-radius: 50%;
+}
+
+.repodesc {
+    width: 75%;
+    height: 100%;
+    padding: 5px;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.repoName {
+    color: blue;
+    font-weight: bold;
+}
