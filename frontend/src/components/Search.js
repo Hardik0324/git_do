@@ -1,9 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { IoSearch } from "react-icons/io5";
-import axios from "axios";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchUser } from "../features/user/userSlice";
-import { fetchUserRepo } from "../features/user/userRepoSlice";
 import "./search.css";
 import { useNavigate } from "react-router-dom";
 

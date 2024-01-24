@@ -3,14 +3,16 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchUser } from "../features/user/userSlice";
 import { fetchUserRepo } from "../features/user/userRepoSlice";
 import "./search.css";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Userrepo from "./Userrepo";
 import "./RepoList.css"
+import Navbar from "./Navbar";
 
 const RepoList = () => {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user);
   const userRepo = useSelector((state) => state.userRepo);
+  const Navigate = useNavigate()
 
   const {login} =  useParams()
 
@@ -26,6 +28,10 @@ const RepoList = () => {
     dispatch(fetchUserRepo(user.userInfo.repos_url));
   };
 
+  const toFollowers = async()=>{
+    Navigate(`/followers/${user.userInfo.login}`)
+  }
+
   useEffect(() => {
     if (user.userInfo != "") {
       fetchRepo();
@@ -34,6 +40,7 @@ const RepoList = () => {
 
   return (
     <div className="maindiv">
+    <Navbar/>
       <div className="chilDiv1">
         <img src={user.userInfo.avatar_url}></img>
           {user.userInfo.name ? (
@@ -41,7 +48,7 @@ const RepoList = () => {
           ) : (
             <span>{user.userInfo.login}</span>
           )}
-          <button className="folbtn">Followers</button>
+          <button className="folbtn" onClick={()=>toFollowers()}>Followers</button>
       </div>
       <div className="chilDiv2">
         {userRepo?.userRepoInfo.map((ele) => (

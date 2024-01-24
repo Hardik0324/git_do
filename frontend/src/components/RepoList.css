@@ -28,11 +28,18 @@
     border-color: inherit;
     border-radius: 0.25rem;
     align-items: center;
-    background-color: blue;
-    color: white;
+    background-color: #1a4c8b;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 0.25rem;
+    transition: background-color 0.3s ease;
     padding: 5px;
     top: 10px;
     right: 10px;
+}
+
+.folbtn:hover{
+    background-color: #2a69b3;
 }
 
 .chilDiv1 img {

@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import "./Repodetail.css"
+import Navbar from './Navbar';
 
 const Repodetail = () => {
   const repos = JSON.parse(localStorage.getItem("repos"))
@@ -30,7 +31,7 @@ const Repodetail = () => {
 
   return (
     <div className="detaildiv">
-      {/* <Navbar /> */}
+      <Navbar/>
       <div className="detailchild">
         <h2>Repository Details</h2>
         {repo && (
