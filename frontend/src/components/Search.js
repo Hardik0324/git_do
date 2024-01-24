@@ -1,49 +1,67 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { IoSearch } from "react-icons/io5";
-import axios from "axios"
+import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchUser } from "../features/user/userSlice";
+import { fetchUserRepo } from "../features/user/userRepoSlice";
+import "./search.css";
+import { useNavigate } from "react-router-dom";
+import Userrepo from "./Userrepo";
 
 const Search = () => {
   const [search, setSearch] = useState();
   const [userData, setUserData] = useState();
-  const [repo, setRepo] = useState([])
+  const dispatch = useDispatch();
+  const user = useSelector((state) => state.user);
+  const userRepo = useSelector((state) => state.userRepo);
+  const Navigate = useNavigate();
 
-  const findUser = async(e)=>{
-      e.preventDefault()
-      const data = await axios.get(`https://api.github.com/users/${search}`);
-      console.log(data.data);
-      setUserData(data.data)
-  }
+  console.log(user.userInfo);
 
-  const fetchRepo = async()=>{
-    const data = await axios.get(userData.repos_url);
-    console.log(data.data)
-    setRepo(data.data)
-  }
+  const findUser = async (e) => {
+    e.preventDefault();
+    dispatch(fetchUser(search));
+  };
 
- useEffect(() => {
-  if(userData){
-    fetchRepo();
-  }
- }, [userData]);
+  const fetchRepo = async () => {
+    dispatch(fetchUserRepo(user.userInfo.repos_url));
+  };
+
+  useEffect(() => {
+    if (user.userInfo != "") {
+      fetchRepo();
+    }
+  }, [user]);
 
   return (
-    <form
-      className="w-[100vw] h-[100vh] flex justify-center items-center bg-gray-100"
-      onSubmit={(e)=> findUser(e)}
-    >
-      <input
-        type="text"
-        placeholder="Enter a user name ..."
-        className="p-[5px] pl-[20px] h-[10%] w-[70%] border-2 border-inherit rounded"
-        onChange={(e) => setSearch(e.target.value)}
-      />
-      <div
-        className="p-[5px] h-[10%] w-[8%] border-2 border-inherit rounded flex items-center justify-center bg-[#D8D2DE]"
-        onClick={() => findUser()}
-      >
-        <IoSearch className="h-[100%] w-[40%]" />
-      </div>
-    </form>
+    <div className="pagediv">
+      <form className="formdiv" onSubmit={(e) => findUser(e)}>
+        <input
+          type="text"
+          placeholder="Enter a user name ..."
+          onChange={(e) => setSearch(e.target.value)}
+        />
+        <div onClick={(e) => findUser(e)}>
+          <IoSearch className="search" />
+        </div>
+      </form>
+      {user.userInfo == "" ? (
+        <div className="maindiv"></div>
+      ) : (
+        <div className="maindiv">
+          <div className="chilDiv1">
+            <img src={user.userInfo.avatar_url}></img>
+            {user.userInfo.name ? <span>{user.userInfo.name}</span> :
+            <span>{user.userInfo.login}</span>}
+          </div>
+          <div className="chilDiv2">
+             {
+              userRepo?.userRepoInfo.map((ele)=> <Userrepo repo={ele}/>)
+             }
+          </div>
+        </div>
+      )}
+    </div>
   );
 };
 

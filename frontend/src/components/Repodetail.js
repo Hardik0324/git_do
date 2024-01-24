@@ -1,11 +1,8 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 
 const Repodetail = () => {
-
   return (
-    <div className="w-[100vw] h-[100vh] flex justify-center items-center bg-gray-100">
-        
-    </div>
+    <div>Repodetail</div>
   )
 }
 

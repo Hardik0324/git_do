@@ -1,0 +1,119 @@
+.pagediv{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;--tw-bg-opacity: 1;
+    background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+}
+
+.formdiv{
+    width: 100%;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.formdiv input{
+    padding: 5px;
+    padding-left: 20px;
+    height: 60%;
+    width: 40%;
+    border-width: 2px;
+    border-radius: 0.25rem;
+    border-color: inherit;
+}
+
+.formdiv div{
+    padding: 5px;
+    height: 60%;
+    width: 4%;
+    border: 2px;
+    border-color: inherit;
+    border-radius: 0.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #D8D2DE;
+}
+
+.maindiv{
+    height: 90%;
+    width: 100%;
+    background-color: #D8D2DE;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+}
+
+.search{
+    height: 100%;
+    width: 40%;
+    cursor: pointer;
+}
+
+.chilDiv1 {
+    height: 20%;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-color: inherit;
+    border-radius: 0.25rem;
+    align-items: center;
+    --tw-bg-opacity: 1;
+    background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+}
+
+.chilDiv1 img {
+    height: 70%;
+    border-radius: 50%;
+    padding-top: 2px;
+}
+
+.chilDiv2{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 5%;
+    padding-top: 20px;
+    padding-left: 10%;
+    padding-right: 10%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.repo{
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    align-items: center;
+    --tw-bg-opacity: 1;
+    background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+    padding: 5px;
+    border-width: 2px;
+    border-color: rgb(187, 185, 185);
+    border-radius: 0.5rem;
+}
+
+.repoavatar{
+    height: 90%;
+    width: 20%;
+    border-radius: 50%;
+}
+
+.repodesc{
+    width: 75%;
+    height: 100%;
+    padding: 5px;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.repoName{
+    color: blue;
+    font-weight: bold;
+}
