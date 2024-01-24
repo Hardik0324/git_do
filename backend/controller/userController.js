@@ -52,6 +52,7 @@ const getUser = asyncHandler(async (req, res) => {
 
 const deleteUser = asyncHandler(async (req, res) => {
   const { userId } = req.params;
+  console.log(userId);
   const user = await User.findOneAndUpdate(
     { login: userId },
     { isDeleted: true },
@@ -99,9 +100,10 @@ const sortUser = asyncHandler(async (req, res) => {
 });
 
 const getSearchUser = asyncHandler(async (req, res) => {
+  console.log("1");
   const searchQuery = req.query;
-
-  const query = {...searchQuery, isDeleted : false}
+  console.log(searchQuery);
+  const query = { ...searchQuery, isDeleted: false };
 
   const users = await User.find(query);
 
